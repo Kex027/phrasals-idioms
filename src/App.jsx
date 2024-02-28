@@ -32,7 +32,10 @@ function App() {
   const enterPressed = (e) => e.key === "Enter";
 
   const checkInput = () => {
-    setStatus(phrases[currentPhrase].english === inputRef?.current?.value);
+    setStatus(
+      phrases[currentPhrase].english ===
+        inputRef?.current?.value?.toLowerCase().trim(),
+    );
   };
 
   const toggleTranslation = () =>
