@@ -7,7 +7,7 @@ const Status = ({ state }) => {
         color: state ? "#0f0" : "#f00",
       }}
     >
-      {state ? "Success!" : "Wrong!"}
+      {state !== null ? (state ? "Success!" : "Wrong!") : ""}
     </span>
   );
 };
