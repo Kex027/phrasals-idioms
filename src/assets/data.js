@@ -188,7 +188,7 @@ const phrasalVerbs = [
   { english: "put sb through", polish: "połączyć, zdzwonić" },
   { english: "put up with", polish: "znosić coś" },
   { english: "run away", polish: "uciec" },
-  { english: "run into sb", polish: "spotkać przez przypadek" },
+  { english: "run into sb", polish: "spotkać kogoś przez przypadek" },
   { english: "run out of sth", polish: "nie mieć już czegoś, skończyć się" },
   { english: "run sb over", polish: "potrącić kogoś" },
   {
