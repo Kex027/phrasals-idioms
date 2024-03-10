@@ -8,12 +8,12 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/react";
-import phrasalVerbs from "../src/assets/data.js";
+import phrasalVerbs from "../src/assets/phrasal_verbs.js";
 import shufflePhrases, { enterPressed } from "../src/assets/functions.js";
 
-const Exam = () => {
+const Exam = ({ data }) => {
+  const phrases = data;
   const [showExam, setShowExam] = useState(false);
-  const phrases = phrasalVerbs;
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [examinedPhrases, setExaminedPhrases] = useState([]);
   const inputQuestionsNumberRef = useRef(null);
@@ -80,6 +80,10 @@ const Exam = () => {
     setShowExam(false);
   };
 
+  const handleEnter = (e) => {
+    if (enterPressed(e)) setPhrases();
+  };
+
   const finalScore = ((score / examinedPhrases.length) * 100).toString();
 
   return (
@@ -87,7 +91,12 @@ const Exam = () => {
       {!showExam ? (
         <div className="content">
           <span>How many words do you want to study?</span>
-          <NumberInput min={1} max={phrases.length} defaultValue={1}>
+          <NumberInput
+            min={1}
+            max={phrases.length}
+            defaultValue={1}
+            onKeyDown={handleEnter}
+          >
             <NumberInputField ref={inputQuestionsNumberRef} />
             <NumberInputStepper>
               <NumberIncrementStepper />

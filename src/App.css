@@ -38,8 +38,25 @@
   padding: 1rem;
 }
 
+.navigation {
+  position: relative;
+  padding: .5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
 @media screen and (min-width: 600px) {
   .grid-answers {
     max-height: 60vh;
   }
+
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
+

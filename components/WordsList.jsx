@@ -1,8 +1,7 @@
 import React from "react";
-import phrasalVerbs from "../src/assets/data.js";
 
-const WordsList = () => {
-  const phrases = phrasalVerbs;
+const WordsList = ({ data }) => {
+  const phrases = data;
 
   return (
     <div
@@ -10,10 +9,16 @@ const WordsList = () => {
         height: "95%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "flex-end",
+        alignItems: "flex-start",
       }}
     >
-      <div style={{ maxHeight: "92%", overflowY: "scroll", padding: "0 1rem" }}>
+      <div
+        style={{
+          maxHeight: "90%",
+          overflowY: "scroll",
+          padding: "0 1rem",
+        }}
+      >
         {phrases.sort().map(({ english, polish }, index) => (
           <div key={`${english}-${polish}`}>
             {index + 1}. <span style={{ fontStyle: "italic" }}>{english}</span>{" "}

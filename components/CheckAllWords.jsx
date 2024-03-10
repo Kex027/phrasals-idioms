@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../src/App.css";
-import phrasalVerbs from "../src/assets/data.js";
 import shufflePhrases, { enterPressed } from "../src/assets/functions.js";
 import Status from "./Status.jsx";
 import { Button, Input } from "@chakra-ui/react";
 
-const CheckAllWords = () => {
-  const initialPhrases = phrasalVerbs;
+const CheckAllWords = ({ data }) => {
+  const initialPhrases = data;
   const [phrases, setPhrases] = useState([]);
   const phrasesLength = phrases.length;
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -16,7 +15,7 @@ const CheckAllWords = () => {
 
   useEffect(() => {
     setPhrases(shufflePhrases(initialPhrases));
-  }, []);
+  }, [data]);
 
   const handleInputClick = (e) => {
     if (enterPressed(e)) {
