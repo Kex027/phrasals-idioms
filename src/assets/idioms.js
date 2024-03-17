@@ -1,16 +1,53 @@
 const idioms = [
-  { english: "be over the moon", polish: "być w siodmym niebie" },
+  {
+    english: "be over the moon",
+    polish: "być bardzo szczęśliwym, być w siodmym niebie",
+  },
+  { english: "be at each other's throats", polish: "skakać sobie do gardeł" },
+  { english: "be down in the dumps", polish: "mieć depresje, mieć doła" },
+  { english: "be snowed under", polish: "być zawalonym pracą" },
+  {
+    english: "be out of one's depth",
+    polish: "czuć się zagubionym, nie mieć wiedzy, doświadczenia",
+  },
   { english: "be screwed", polish: "mieć przerąbane" },
+  { english: "breathe down sb's neck", polish: "stać komuś nad głową" },
+  { english: "burn the midnight oil", polish: "pracować do późnej nocy" },
   { english: "call it a day", polish: "przestać pracować na dziś" },
   { english: "cut to the chase", polish: "przejść do sedna" },
+  { english: "call it a day", polish: "zakończyć pracę na dzisiaj" },
+  { english: "draw a blank", polish: "nie znaleźć rozwiązania" },
+  {
+    english: "eat somebody out of house and home",
+    polish: "objeść kogoś do szczętu (wyczyścić komuś lodówkę)",
+  },
   { english: "fender-bender", polish: "mała stłuczka, kolizja" },
+  {
+    english: "get on like a house on fire",
+    polish: "od razu się zaprzyjaźnić",
+  },
   { english: "get out of hand", polish: "stracić kontrolę" },
+  { english: "get off on the wrong foot", polish: "źle zacząć znajomość" },
   { english: "hang in there", polish: "trzymaj się, nie poddawaj się" },
+  {
+    english: "have a chip on one's shoulder",
+    polish: "mieć pretensje do całego świata",
+  },
   { english: "have a sweet tooth", polish: "lubić słodycze" },
+  { english: "learn the ropes", polish: "nauczyć się fachu" },
   { english: "long story short", polish: "w skrócie" },
+  { english: "make ends meet", polish: "wiązać koniec z końcem" },
   { english: "miss the boat", polish: "za poźno" },
+  { english: "on cloud nine", polish: "być w siodmym niebie" },
   { english: "once in a blue moon", polish: "raz na ruski rok" },
+  { english: "pass with flying colors", polish: "zdać śpiewająco" },
+  { english: "pull a few strings", polish: "wykorzystać nieformalne kontakty" },
+  { english: "pull your weight", polish: "przyłożyć się" },
   { english: "pull yourself together", polish: "weź się w garść" },
+  {
+    english: "put one's house in order",
+    polish: "doprowadzić swoje sprawy do ładu",
+  },
   { english: "save for a rainy day", polish: "zachować na czarną godzinę" },
   { english: "speak of the devil", polish: "o wilku mowa" },
   {
@@ -21,7 +58,9 @@ const idioms = [
     english: "spring chicken",
     polish: "młoda osoba (zazwyczaj negatywnie o kimś, kto już nie jest młody)",
   },
+  { english: "sweep sb off their feet", polish: "zawrócić komuś w głowie" },
   { english: "that's the last straw", polish: "tego już za wiele" },
+  { english: "think on your feet", polish: "podejmować szybkie decyzje" },
 ];
 
 export default idioms;

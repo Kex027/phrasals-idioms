@@ -5,18 +5,18 @@ import { Card, Select, Stack } from "@chakra-ui/react";
 import Exam from "../components/Exam.jsx";
 import { useEffect, useState } from "react";
 import idioms from "../src/assets/idioms.js";
-import phrasalVerbs from "../src/assets/phrasal_verbs.js";
 import phrasal_verbs from "../src/assets/phrasal_verbs.js";
+import school_book from "../src/assets/school_book.js";
 
 function App() {
   const [data, setData] = useState([]);
   const [selectValue, setSelectValue] = useState("all");
 
   const handleSettingData = (value) => {
-    if (value === "all") setData([...phrasal_verbs, ...idioms]);
-    else if (value === "phrasal_verbs") {
-      setData(phrasalVerbs);
-    } else if (value === "idioms") setData(idioms);
+    if (value === "all") setData([...phrasal_verbs, ...idioms, ...school_book]);
+    else if (value === "phrasal_verbs") setData(phrasal_verbs);
+    else if (value === "idioms") setData(idioms);
+    else if (value === "school_book") setData(school_book);
     else setData([]);
   };
 
@@ -48,6 +48,7 @@ function App() {
             <option value="all">All</option>
             <option value="phrasal_verbs">Phrasal verbs</option>
             <option value="idioms">Idioms</option>
+            <option value="school_book">School book</option>
           </Select>
         </Stack>
       </nav>
