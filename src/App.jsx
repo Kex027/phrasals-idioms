@@ -7,16 +7,19 @@ import { useEffect, useState } from "react";
 import idioms from "../src/assets/idioms.js";
 import phrasal_verbs from "../src/assets/phrasal_verbs.js";
 import school_book from "../src/assets/school_book.js";
+import pg_unit_1 from "../src/assets/pg_unit_1.js";
 
 function App() {
   const [data, setData] = useState([]);
   const [selectValue, setSelectValue] = useState("all");
+  const allWords = [...phrasal_verbs, ...idioms, ...school_book, ...pg_unit_1];
 
   const handleSettingData = (value) => {
-    if (value === "all") setData([...phrasal_verbs, ...idioms, ...school_book]);
+    if (value === "all") setData(allWords);
     else if (value === "phrasal_verbs") setData(phrasal_verbs);
     else if (value === "idioms") setData(idioms);
     else if (value === "school_book") setData(school_book);
+    else if (value === "pg_unit_1") setData(pg_unit_1);
     else setData([]);
   };
 
@@ -49,6 +52,7 @@ function App() {
             <option value="phrasal_verbs">Phrasal verbs</option>
             <option value="idioms">Idioms</option>
             <option value="school_book">School book</option>
+            <option value="pg_unit_1">PG unit 1</option>
           </Select>
         </Stack>
       </nav>

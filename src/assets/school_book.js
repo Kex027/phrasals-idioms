@@ -39,6 +39,7 @@ const school_book = [
   { english: "get on with sb", polish: "dogadywać się z kimś" },
   { english: "get on with sth", polish: "zająć się czymś" },
   { english: "get over sth", polish: "dochodzić do siebie po czymś" },
+  { english: "get rid of sth", polish: "pozbyć się czegoś" },
   { english: "give in", polish: "poddać się" },
   { english: "give sth up", polish: "zrezygnować z czegoś" },
   { english: "go over sth", polish: "przeanalizować coś" },
