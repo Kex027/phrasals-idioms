@@ -69,6 +69,21 @@ const pg_unit_1 = [
   { english: "novel ideas", polish: "oryginalne pomysły" },
   { english: "innate", polish: "wrodzony" },
   { english: "raw talent", polish: "czysty talent" },
+  { english: "student loan", polish: "kredyt studencki" },
+  { english: "tuition fees", polish: "czesne" },
+  {
+    english: "blended learning",
+    polish: "nauczanie mieszane (łączące naukę online i stacjonarną)",
+  },
+  {
+    english: "virtual learning environment",
+    polish: "wirtualne środowisko nauczania",
+  },
+  { english: "vocational training", polish: "szkolenie zawodowe" },
+  { english: "peer assessment", polish: "ocena dokonywana przez rówieśników" },
+  { english: "continuous assessment", polish: "ocena ciągła" },
+  { english: "rote learning", polish: "nauka przez powtarzanie (pamięciowa)" },
+  { english: "external accreditation", polish: "zewnętrzna akredytacja" },
 ];
 
 export default pg_unit_1;
