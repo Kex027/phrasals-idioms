@@ -9,6 +9,7 @@ import phrasal_verbs from "../src/assets/phrasal_verbs.js";
 import school_book from "../src/assets/school_book.js";
 import pg_unit_1 from "../src/assets/pg_unit_1.js";
 import pg_technical_english from "../src/assets/pg_technical_english.js";
+import pg_unit_2 from "../src/assets/pg_unit_2.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -19,6 +20,7 @@ function App() {
     ...school_book,
     ...pg_unit_1,
     ...pg_technical_english,
+    ...pg_unit_2,
   ];
 
   const handleSettingData = (value) => {
@@ -28,6 +30,7 @@ function App() {
     else if (value === "school_book") setData(school_book);
     else if (value === "pg_unit_1") setData(pg_unit_1);
     else if (value === "pg_technical_english") setData(pg_technical_english);
+    else if (value === "pg_unit_2") setData(pg_unit_2);
     else setData([]);
   };
 
@@ -62,6 +65,7 @@ function App() {
             <option value="school_book">School book</option>
             <option value="pg_unit_1">PG unit 1</option>
             <option value="pg_technical_english">PG technical english</option>
+            <option value="pg_unit_2">PG unit 2</option>
           </Select>
         </Stack>
       </nav>
