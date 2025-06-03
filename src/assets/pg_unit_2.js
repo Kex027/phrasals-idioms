@@ -84,3 +84,5 @@ const pg_unit_2 = [
   { english: "detrimental effect", polish: "szkodliwy efekt" },
   { english: "facilitate the development", polish: "ułatwić rozwój" },
 ];
+
+export default pg_unit_2;
