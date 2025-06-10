@@ -33,7 +33,7 @@ const pg_unit_2 = [
   { english: "maintain", polish: "utrzymywać, twierdzić" },
   { english: "ponder", polish: "rozważać, zastanawiać się" },
   { english: "question", polish: "kwestionować, poddawać w wątpliwość" },
-  { english: "raise (a topic)", polish: "poruszyć temat" },
+  { english: "raise a topic", polish: "poruszyć temat" },
   { english: "back somebody up", polish: "poprzeć kogoś" },
   { english: "commonplace", polish: "powszechny, pospolity" },
   { english: "deeply rooted", polish: "głęboko zakorzeniony" },
