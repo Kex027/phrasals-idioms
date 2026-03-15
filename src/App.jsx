@@ -11,6 +11,7 @@ import pg_unit_1 from "../src/assets/pg_unit_1.js";
 import pg_technical_english from "../src/assets/pg_technical_english.js";
 import pg_unit_2 from "../src/assets/pg_unit_2.js";
 import pg_maths_and_studies from "../src/assets/pg_math_and_studies.js";
+import italian_kitchen from "./assets/italian_kitchen.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -23,10 +24,10 @@ function App() {
     ...pg_technical_english,
     ...pg_unit_2,
     ...pg_maths_and_studies,
+    ...italian_kitchen,
   ];
 
   //TODO practice mistakes
-  //TODO przy porownywaniu powinno byc tolowercase z obu stron
 
   const handleSettingData = (value) => {
     if (value === "all") setData(allWords);
@@ -37,6 +38,7 @@ function App() {
     else if (value === "pg_technical_english") setData(pg_technical_english);
     else if (value === "pg_unit_2") setData(pg_unit_2);
     else if (value === "pg_maths_and_studies") setData(pg_maths_and_studies);
+    else if (value === "italian_kitchen") setData(italian_kitchen);
     else setData([]);
   };
 
@@ -73,6 +75,7 @@ function App() {
             <option value="pg_technical_english">PG technical english</option>
             <option value="pg_unit_2">PG unit 2</option>
             <option value="pg_maths_and_studies">PG maths and studies</option>
+            <option value="italian_kitchen">Italian kitchen</option>
           </Select>
         </Stack>
       </nav>
