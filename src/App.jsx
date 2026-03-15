@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import WordsList from "../components/WordsList.jsx";
-import CheckAllWords from "../components/CheckAllWords.jsx";
+import WordsList from "../components/WordsList.tsx";
+import CheckAllWords from "../components/CheckAllWords.tsx";
 import { Card, Select, Stack } from "@chakra-ui/react";
 import Exam from "../components/Exam.jsx";
 import { useEffect, useState } from "react";
@@ -24,6 +24,9 @@ function App() {
     ...pg_unit_2,
     ...pg_maths_and_studies,
   ];
+
+  //TODO practice mistakes
+  //TODO przy porownywaniu powinno byc tolowercase z obu stron
 
   const handleSettingData = (value) => {
     if (value === "all") setData(allWords);

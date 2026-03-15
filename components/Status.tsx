@@ -1,6 +1,6 @@
 import React from "react";
 
-const Status = ({ state }) => {
+const Status = ({ state }: { state: boolean | null }) => {
   return (
     <span
       style={{

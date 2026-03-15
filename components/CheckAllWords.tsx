@@ -1,23 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../src/App.css";
 import shufflePhrases, { enterPressed } from "../src/assets/functions.js";
-import Status from "./Status.jsx";
+import Status from "./Status.js";
 import { Button, Input } from "@chakra-ui/react";
+import type { StudyItem } from "../src/types/word_list.js";
 
-const CheckAllWords = ({ data }) => {
+const CheckAllWords = ({ data }: { data: StudyItem[] }) => {
   const initialPhrases = data;
-  const [phrases, setPhrases] = useState([]);
+  const [phrases, setPhrases] = useState<StudyItem[]>([]);
   const phrasesLength = phrases.length;
-  const [currentPhrase, setCurrentPhrase] = useState(0);
-  const inputRef = useRef(null);
-  const [status, setStatus] = useState(null);
+  const [currentPhrase, setCurrentPhrase] = useState<number>(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [status, setStatus] = useState<boolean | null>(null);
   const [showTranslation, setShowTranslation] = useState(false);
 
   useEffect(() => {
     setPhrases(shufflePhrases(initialPhrases));
   }, [data]);
 
-  const handleInputClick = (e) => {
+  const handleInputClick = (e: React.KeyboardEvent) => {
     if (enterPressed(e)) {
       if (status) nextQuestion();
       else checkInput();
@@ -26,7 +27,7 @@ const CheckAllWords = ({ data }) => {
 
   const checkInput = () => {
     setStatus(
-      phrases[currentPhrase].english ===
+      phrases[currentPhrase]?.foreign ===
         inputRef?.current?.value?.toLowerCase().trim(),
     );
   };
@@ -37,7 +38,9 @@ const CheckAllWords = ({ data }) => {
   };
 
   const clearInput = () => {
-    inputRef.current.value = "";
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
   };
 
   const nextQuestion = () => {
@@ -46,7 +49,10 @@ const CheckAllWords = ({ data }) => {
     clearInput();
     setStatus(null);
     setShowTranslation(false);
-    inputRef.current.focus();
+
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   const reset = () => {
@@ -64,7 +70,7 @@ const CheckAllWords = ({ data }) => {
         </span>
         {currentPhrase !== phrasesLength ? (
           <>
-            <span>Translate: {phrases[currentPhrase].polish}</span>
+            <span>Translate: {phrases[currentPhrase]?.polish}</span>
             <Status state={status} />
             <Input ref={inputRef} onKeyDown={handleInputClick} />
             {status ? (
@@ -85,7 +91,7 @@ const CheckAllWords = ({ data }) => {
             </Button>
             <span>
               {showTranslation &&
-                ` Translation: ${phrases[currentPhrase].english}`}
+                ` Translation: ${phrases[currentPhrase]?.foreign}`}
             </span>
           </>
         ) : (

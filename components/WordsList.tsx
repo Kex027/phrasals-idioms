@@ -1,8 +1,7 @@
 import React from "react";
+import type { StudyItem } from "../src/types/word_list.js";
 
-const WordsList = ({ data }) => {
-  const phrases = data;
-
+const WordsList = ({ data: phrases }: { data: StudyItem[] }) => {
   return (
     <div
       style={{
@@ -19,9 +18,9 @@ const WordsList = ({ data }) => {
           padding: "0 1rem",
         }}
       >
-        {phrases.sort().map(({ english, polish }, index) => (
-          <div key={`${english}-${polish}`}>
-            {index + 1}. <span style={{ fontStyle: "italic" }}>{english}</span>{" "}
+        {phrases.sort().map(({ foreign, polish }, index) => (
+          <div key={`${foreign}-${polish}`}>
+            {index + 1}. <span style={{ fontStyle: "italic" }}>{foreign}</span>{" "}
             - {polish}
           </div>
         ))}

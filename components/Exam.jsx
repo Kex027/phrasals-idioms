@@ -9,7 +9,7 @@ import {
   NumberInputStepper,
 } from "@chakra-ui/react";
 import phrasalVerbs from "../src/assets/phrasal_verbs.js";
-import shufflePhrases, { enterPressed } from "../src/assets/functions.js";
+import shufflePhrases, { enterPressed } from "../src/assets/functions.ts";
 
 const Exam = ({ data }) => {
   const phrases = data;
@@ -46,7 +46,7 @@ const Exam = ({ data }) => {
   };
 
   const validAnswer = () =>
-    examinedPhrases[currentPhrase].english ===
+    examinedPhrases[currentPhrase].foreign.toLowerCase() ===
     inputAnswerRef?.current?.value?.toLowerCase().trim();
 
   const nextQuestion = () => {
@@ -140,7 +140,7 @@ const Exam = ({ data }) => {
                 {userAnswers.map((answer, index) => {
                   const colorStyle = {
                     color:
-                      answer === examinedPhrases[index].english
+                      answer === examinedPhrases[index].foreign
                         ? "#d1ffc2"
                         : "#ff8e8e",
                   };
@@ -153,7 +153,7 @@ const Exam = ({ data }) => {
                         {examinedPhrases[index].polish}
                       </div>
                       <div style={{ ...colorStyle, fontWeight: "bold" }}>
-                        {examinedPhrases[index].english}
+                        {examinedPhrases[index].foreign}
                       </div>
                       <div style={colorStyle}>{answer}</div>
                     </React.Fragment>
